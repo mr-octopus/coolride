@@ -1,0 +1,68 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	<title>CC3D</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel=stylesheet href="css/base.css"/>
+
+<!-- skybox shaders -->
+<script type="x-shader/x-vertex" id="sky-vertex">
+varying vec3 vWorldPosition;
+
+void main() {
+    vec4 worldPosition = modelMatrix * vec4( position, 1.0 );
+    vWorldPosition = worldPosition.xyz;
+
+    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+}
+</script>
+
+<script type="x-shader/x-fragment" id="sky-fragment">
+uniform vec3 topColor;
+uniform vec3 bottomColor;
+uniform float offset;
+uniform float exponent;
+
+varying vec3 vWorldPosition;
+
+void main() {
+    float h = normalize( vWorldPosition + offset ).y;
+    gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( h, exponent ), 0.0 ) ), 1.0 );
+}
+</script>
+<!-- /skybox shaders -->
+
+
+</script>
+</head>
+<body>
+
+<script src="js/Three.js"></script>
+<script src="js/Detector.js"></script>
+<script src="js/Stats.js"></script>
+<script src="js/OrbitControls.js"></script>
+<script src="js/THREEx.KeyboardState.js"></script>
+<script src="js/THREEx.FullScreen.js"></script>
+<script src="js/THREEx.WindowResize.js"></script>
+
+<script src="js/Tween.js"></script>
+
+<script src="game_constants.js"></script>
+<script src="cc3d_utils.js"></script>
+<script src="board.js"></script>
+<script src="car_controls.js"></script>
+<script src="vehicle.js"></script>
+
+<!-- jQuery code to display an information button and box when clicked. -->
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<link rel=stylesheet href="css/jquery-ui.css" />
+<link rel=stylesheet href="css/info.css"/>
+<div id="ThreeJS" style="position: absolute; left:0px; top:0px"></div>
+<script src="main.js"></script>
+
+</body>
+</html>

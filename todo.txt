@@ -1,0 +1,37 @@
+
+Helpers, good tutorial
+http://www.script-tutorials.com/webgl-with-three-js-lesson-3
+
+animation
+http://www.script-tutorials.com/webgl-with-three-js-lesson-8/
+
+As separate projects/branches, merge later
+
+Explorations
+Inspirations
+http://www.ro.me/tech/
+https://github.com/dataarts/3-dreams-of-black
+
+
+* Skydome
+https://stemkoski.github.io/Three.js/Skybox.html
+http://www.script-tutorials.com/webgl-with-three-js-lesson-5/
+- solid ground
+- move around (up/down)
+
+* Grass
+- move around (up/down)
+- infinite seamleass movement
+
+* Horse model
+https://developer.tizen.org/documentation/articles/three.js-importing-md2-3d-animated-models
+http://www.milkshape3d.com/md2v/index.html
+http://threejs.org/examples/#webgl_morphtargets_horse
+http://stackoverflow.com/questions/16485549/webgl-three-js-skinning-animation-basic-concept
+- move around (up/down)
+- infinite seamleass movement
+
+
+
+* Try out
+http://benvanik.github.io/WebGL-Inspector/
